@@ -1,0 +1,42 @@
+LABCENTER PROTEUS TOOL INFORMATION FILE
+=======================================
+
+In case of difficulty, please e-mail support@labcenter.co.uk
+
+Tool set up for Proteus layout 'UpCon2_Web.LYT'.
+CADCAM generated at 20:16:20 on 29 July 2012.
+
+File List
+---------
+Bottom Copper           : UpCon2_Web_Gerber - CADCAM Bottom Copper.TXT
+Top Silk Screen         : UpCon2_Web_Gerber - CADCAM Top Silk Screen.TXT
+Top Solder Resist       : UpCon2_Web_Gerber - CADCAM Top Solder Resist.TXT
+Drill                   : UpCon2_Web_Gerber - CADCAM Drill.TXT
+
+Photoplotter Setup
+------------------
+Format: RS274X, ASCII, 2.4, imperial, absolute, eob=*, LZO
+Notes:  D=Diameter, S=Side, W=Width, H=Height
+
+D10	CIRCLE	D=60th                                      DRAW
+D11	CIRCLE	D=10th                                      DRAW
+D12	CIRCLE	D=20th                                      DRAW
+D13	CIRCLE	D=2.5th                                     DRAW
+D14	CIRCLE	D=100th                                     FLASH
+D15	CIRCLE	D=80th                                      FLASH
+D16	SQUARE	S=80th                                      FLASH
+D17	CIRCLE	D=8th                                       DRAW
+D18	CIRCLE	D=130th                                     FLASH
+D19	SMT	W=100th               H=100th               FLASH
+
+NC Drill Setup
+--------------
+Format: ASCII, 2.4, imperial, absolute, eob=<CR><LF>, no zero suppression.
+Notes:  Tool sizes are diameters. Layer sets are in brackets - 0=TOP, 15=BOTTOM, 1-14=INNER.
+
+T01	45th (0-15)
+T02	30th (0-15)
+T03	40th (0-15)
+
+
+[END OF FILE]
