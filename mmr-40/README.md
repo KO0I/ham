@@ -1,4 +1,6 @@
-Introduction:
+# MMR-40 QRP SSB Transceiver
+
+## Introduction:
 by KD1JV
 
 What is the MMR-40? It is a 40 meter rig with SSB (voice) and CW (Morse code)
@@ -18,10 +20,12 @@ seperate file in this repo.
 
 --------------------------------------------------------------------------
 
-
+## Instructions note:
 mask.pdf must be printed on a LASERJET PRINTER and then ironed onto a clean
 copper surface. Dimensions included on the document. Check to make sure the
 sizing is correct.
 
 Parts placement layout used for assembly. See website for details on how to
 put it together/test things, etc.
+
+Please note the actual instructions are on KD1JV's website.
