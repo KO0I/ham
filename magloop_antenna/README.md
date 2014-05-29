@@ -4,7 +4,6 @@
 ## Introduction:
 
 **TL:DR**:High efficiency/portability in exchange for very narrow bandwidth (a blessing in disguise, though for noisy environments)
-## Theory of Operation:
 
 ## Parts:
 
@@ -24,14 +23,24 @@
   
           Outer Loop
 
-* Adjustable Capacitor ~500pF or more
+* Adjustable Capacitor ~100pF or more
   * I've been told a "trombone style" capacitor is very effective if I need
     to homebrew it.
 * Large diameter Copper Tubing (larger is more efficient)
 * Coupling Loop
 * Tripod or Other Stand
 
-## References
+### Specific Parts
+
+I used 20 feet of pipe from a local plumber supply. I chose 3/4" diameter
+because it was the optimal amount for my budget, including a coupler ($40)
+
+The capacitor was homebrewed and is in another directory.
+
+The antenna bracket is to hold the loop against a plank of wood that will also
+brace the inner loop.
+
+## References:
 
 This guy has used his mainly on 40m
 http://home.alphalink.com.au/~parkerp/projects/projmag.htm

@@ -1,0 +1,336 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11501,        327]
+NotebookOptionsPosition[     10611,        292]
+NotebookOutlinePosition[     10946,        307]
+CellTagsIndexPosition[     10903,        304]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"everything", " ", "is", " ", "in", " ", "AES"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"c1", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"c2", "=", "20"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tax", "=", 
+     FractionBox["3.6", "100"]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"diameters", "=", 
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", "0.75", ",", "1"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"cost", "=", 
+     RowBox[{"{", 
+      RowBox[{"19.96", ",", "33.5", ",", "58.9"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"realcost", "=", 
+    RowBox[{"{", 
+     RowBox[{"20.68", ",", "34.7", ",", "61.02"}], "}"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"including", " ", "tax"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"efficiency", "=", 
+     RowBox[{"{", 
+      RowBox[{"41", ",", "51", ",", "58"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   FractionBox["efficiency", "realcost"], 
+   RowBox[{"(*", 
+    RowBox[{"percent", " ", "effieciency", " ", "per", " ", "dollar"}], 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.607309020760592*^9, 3.607309110126462*^9}, {
+   3.607309146651116*^9, 3.607309146876008*^9}, 3.6073092091393967`*^9, {
+   3.607309578477928*^9, 3.607309690907023*^9}, {3.607309737193254*^9, 
+   3.607309768268943*^9}, {3.6073099141651297`*^9, 3.607309986819828*^9}, {
+   3.6073100193844843`*^9, 3.607310138434556*^9}, {3.607310188557242*^9, 
+   3.607310238926333*^9}, {3.607310292538567*^9, 3.607310339314475*^9}, {
+   3.607310417351158*^9, 3.607310455547617*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"20.68`", ",", "34.7`", ",", "61.02`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.607309771806203*^9, 3.6073098358731537`*^9, {3.607309918513377*^9, 
+   3.60730998845366*^9}, 3.6073100198557253`*^9, {3.607310124224677*^9, 
+   3.60731014131884*^9}, 3.607310239937972*^9, {3.607310302737524*^9, 
+   3.607310350900074*^9}, {3.6073104180402403`*^9, 3.6073104578332033`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1.9825918762088977`", ",", "1.4697406340057637`", ",", 
+   "0.9505080301540477`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.607309771806203*^9, 3.6073098358731537`*^9, {3.607309918513377*^9, 
+   3.60730998845366*^9}, 3.6073100198557253`*^9, {3.607310124224677*^9, 
+   3.60731014131884*^9}, 3.607310239937972*^9, {3.607310302737524*^9, 
+   3.607310350900074*^9}, {3.6073104180402403`*^9, 3.607310457834907*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"the", " ", "most", " ", "cost"}], "-", 
+   RowBox[{"effective", " ", "solution", " ", "is", " ", "the", " ", 
+    RowBox[{"1", "/", "2"}], "\"\< diameter pipe\>"}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.607310364294362*^9, 3.607310391925543*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"data", "=", 
+  RowBox[{"Thread", "[", 
+   RowBox[{"{", 
+    RowBox[{"diameters", ",", "efficiency"}], "}"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"line", "=", 
+   RowBox[{"Fit", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"{", 
+      RowBox[{"40", ",", "x"}], "}"}], ",", "x"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ideal", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"line", ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0.4", ",", "1"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Dashed", ",", "LightGray", ",", "Thick"}], "}"}]}]}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"meas", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", 
+        RowBox[{"PointSize", "[", "0.01", "]"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"ideal", ",", "meas", ",", 
+   RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"GridLinesStyle", "\[Rule]", "LightGray"}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<efficiency vs diameter\>\""}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<diameter [inches]\>\"", ",", "\"\<efficiency [%]\>\""}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.607309166199946*^9, 3.607309202216268*^9}, {
+  3.607309783834683*^9, 3.607309895836151*^9}, {3.6073103477324457`*^9, 
+  3.607310349817236*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.5`", ",", "41"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.75`", ",", "51"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "58"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.607309772100194*^9, {3.6073098360046988`*^9, 3.607309896438293*^9}, 
+   3.607309988524349*^9, {3.607310133639312*^9, 3.6073101414024153`*^9}, 
+   3.607310240413151*^9, {3.6073103028421392`*^9, 3.607310350971388*^9}, 
+   3.607310457926238*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {GrayLevel[0.85], Thickness[Large], Dashing[{Small, Small}], 
+     LineBox[CompressedData["
+1:eJwVkHs01HkYxtGWS1TEVJYyquGgrbQmZL1vxmAuv8qk60ZHyWWZtbqQFc1o
+wma36UJFYVBbaV1rZU+haNlot1Y2DeMy4xryjdg1WLP2j+c85zmfc57nnId+
+KFJwREdLS4ua0/9edqz6x4wMOTxp5b56YcjC1CzLuKwbcuhov9+cYcTCoPq4
+7bk5cpjuspAHL2Ih7VPnyTu35MDsH1FqLWFhbE0Jp6JUDoUfL338fCkL0Thv
++M1zOWQattGyVrDwZZHE0XRKDsfdw/2FDBYOv+NUnd/fCjZ5qYNGyMIHfZPy
+Kvs24Fv2lWbHsNCP8YFhQtpgU8OeJtE9Fh6sXn3lQpECWhOUIQEdLJzsiNPn
+JrSDe7+kINXME8O2WhQxsAOCxOBlwPHEUDvlbneTTvB5uVT6VuSJTREqurir
+E4bXaFF5Dz1xodpMemxHFwh+mhdUOeiJ47P8xc8quiC638rW1pqNHIatLcNc
+Cfv9drF7drFx57f0pqxYJWg9z225nsLGm8brZh2VSjg8qrssv5qNgQ2KGvlW
+FSTzzhZPj7HxSF22fnaBCsL2WUzk23nhKpKgjDHuBsPIxmLvQC9ku8wTHI7q
+hm/KL9a6pXlhWV2GZ4S8Gy6VRknEjV6YeqL5ZZJrD5zoCM1epvHCeyH09qr8
+HqBVxx75l+mNoqTv4wwX9kLM7bzcDqE31tRdLwsP74XMpyqmca438riV4QOv
+eyFO6hZ7+a03IkmsjHbqA0tpoWmIoQ8OPgmWmaf3gegKcy0TfLDtrwPzFTN9
+IPOVq/yifdDZ8B+dYv9+ELlfVj+764OKs/mJOXX9YNUZXClR+iDT4evLt9YN
+gChZ8Dcs5+DMR4Vb5Q8DIAvclcLncVBf4x86NjHHSVT9nUQOJtqfcXDZ8w6s
+im8d3F3OwRJJnTi9/B2IokcjNAMcXEu32Ld45SBkj+62mVzFRd1Os+eZCYOQ
+kP3a1WMnFzd00R+x+gfBQhM23XaOi7/qNLFnfYYg7uIys/oqLi4WyAL/uDME
+mfbt+YWjXJT1iDSPlgxDTOzjzm5bHmZdm898FDUMNHXZ8fADPFRJb4y0tA7D
+UYfaco80Hiru+zobeLwHaciQ0KyRhx7qAvNtee9B2GyX4DLLQyKmnS42GAH9
+iTNbCp34qOfAOGUdMQLB3uO+R8P4+EbHz+Be4whIck+1O97g45BFmrnvJgIB
+xStprNd8FO49WauXRmBmpOX2zQUU7rXfIatIJ6B31c7snC6FHrM28aFXCZhC
+fGKkHoW0my3M3zIJfCa19nc1oLCKMAuSc+f61gtNXhlRuCh54sKCYgJPInXi
+p00pLPn5aMAnDQRSPjgIBKspzEzhbnnQSCDt2unqzWsolHxpvTzodwIybHKw
+XDu3r930Z+0rAhUXYnQHGBRqUxvZZ1oIDG6oeRxvR6Ggh9jr9BLYFrXH5u5G
+Ct0e1uuV9RHYv6Ig7bwjhYxzOb2BAwSCn85oH99E4dT67TlPhwgkGOcp3J0o
+zI8rMhGPESgpHb7Y7Ezh+W1JZMM4gcf7QPOLC4Un6QEvuiYINGhfishxpZBf
+b5SEagIq383eX7lRyMzsPfRhisCI+rsH27+g0EpYCbIZAlO5CrqTO4UGmG6x
+Y5bAAu56qTlQOG4iVGs0c/+NiWc0c/k/kupQUw==
+      "]]}}, {{}, 
+    {GrayLevel[0], PointSize[0.01], 
+     PointBox[{{0.5, 41.}, {0.75, 51.}, {1., 58.}}]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"diameter [inches]\"", TraditionalForm], 
+    FormBox["\"efficiency [%]\"", TraditionalForm]},
+  AxesOrigin->{0.4, 38.},
+  GridLines->Automatic,
+  GridLinesStyle->GrayLevel[0.85],
+  ImageSize->{471., Automatic},
+  Method->{},
+  PlotLabel->FormBox["\"efficiency vs diameter\"", TraditionalForm],
+  PlotRange->{{0.4, 1}, {38.100000416326566`, 58.499999583673485`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.607309772100194*^9, {3.6073098360046988`*^9, 3.607309896438293*^9}, 
+   3.607309988524349*^9, {3.607310133639312*^9, 3.6073101414024153`*^9}, 
+   3.607310240413151*^9, {3.6073103028421392`*^9, 3.607310350971388*^9}, 
+   3.6073104579408007`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "/", "2"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\[CloseCurlyDoubleQuote] conductor diameter"
+}], "Subsubsection",
+ CellChangeTimes->{{3.6073107459263363`*^9, 3.607310803083222*^9}}],
+
+Cell["\<\
+Antenna efficiency : 41 % (-3.8 dB below 100 %)
+Antenna bandwidth : 12.6 kHz
+Tuning Capacitance : 114 pF
+
+Capacitor voltage : 742 volts RMS
+Resonant circulating current : 3.73 A
+Radiation resistance : 0.074 ohms
+Loss Resistance : 0.105 ohms
+Inductance : 4.52 microhenrys
+Inductive Reactance : 199 ohms
+Quality Factor (Q) : 554
+Distributed capacity : 16 pF\
+\>", "Text",
+ CellChangeTimes->{{3.607310568888196*^9, 3.607310581675671*^9}, {
+  3.607310707711891*^9, 3.607310729906168*^9}, {3.607310791361133*^9, 
+  3.607310792173504*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3/4\[CloseCurlyDoubleQuote] conductor diameter", "Subsubsection",
+ CellChangeTimes->{{3.6073107459263363`*^9, 3.6073107526777487`*^9}, {
+  3.6073107975234833`*^9, 3.607310807207716*^9}}],
+
+Cell["\<\
+Antenna efficiency : 51 % (-2.9 dB below 100 %)
+Antenna bandwidth : 9.16 kHz
+Tuning Capacitance : 103 pF
+
+Capacitor voltage : 917 volts RMS
+Resonant circulating current : 4.16 A
+Radiation resistance : 0.074 ohms
+Loss Resistance : 0.070 ohms
+Inductance : 5.01 microhenrys
+Inductive Reactance : 220 ohms
+Quality Factor (Q) : 764\
+\>", "Text",
+ CellChangeTimes->{{3.607310819999002*^9, 3.60731083189607*^9}, {
+  3.607310884236169*^9, 3.607310884594123*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1\[CloseCurlyDoubleQuote] conductor diameter", "Subsubsection",
+ CellChangeTimes->{{3.6073107459263363`*^9, 3.6073107526777487`*^9}}],
+
+Cell["\<\
+Antenna efficiency: 58% (-2.3 dB below 100%)
+Antenna bandwidth: 7.52 kHz
+Tuning Capacitance: 96 pF
+
+Capacitor voltage: 1,047 volts RMS
+Resonant circulating current: 4.44 A
+Radiation resistance: 0.074 ohms
+Loss Resistance: 0.053 ohms
+Inductance: 5.36 microhenrys
+Inductive Reactance: 236 ohms
+Quality Factor (Q): 931\
+\>", "Text",
+ CellChangeTimes->{{3.607310731153576*^9, 3.607310774464561*^9}, {
+  3.607310887918454*^9, 3.607310888228786*^9}}]
+}, Open  ]]
+},
+WindowSize->{1278, 783},
+WindowMargins->{{0, Automatic}, {2, Automatic}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1715, 43, 332, "Input"],
+Cell[2297, 67, 410, 7, 32, "Output"],
+Cell[2710, 76, 455, 9, 32, "Output"]
+}, Open  ]],
+Cell[3180, 88, 308, 6, 77, "Input"],
+Cell[CellGroupData[{
+Cell[3513, 98, 1624, 44, 495, "Input"],
+Cell[5140, 144, 507, 13, 32, "Output"],
+Cell[5650, 159, 2775, 55, 280, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8462, 219, 258, 7, 35, "Subsubsection"],
+Cell[8723, 228, 543, 16, 246, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9303, 249, 192, 2, 35, "Subsubsection"],
+Cell[9498, 253, 464, 14, 220, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9999, 272, 139, 1, 35, "Subsubsection"],
+Cell[10141, 275, 454, 14, 226, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,22 @@
+Magnetic Loop Antenna Specifications
+
+Loop Circumference  	  20.00 feet
+Conductor Diameter  	   0.75 inches
+Frequency           	   7.00 mHz
+Bandwidth           	    9.6 kHz
+Capacitor Value     	   87.8 pF 
+Capacitor Voltage   	    0.9 kV
+Conductor Wavelength	  0.150 lamda
+Efficiency          	   53.9 %
+Inductance          	  5.074 µH
+Inductive Reactance 	  223.2 ohms
+Loop Area           	   31.8 feet²
+Loop Diameter       	    6.4 feet
+Loop Q Value        	  731.7 Qres
+Radiation Resistance	  0.082 ohms
+Resistance Loss     	  0.070 ohms
+
+Note: for a Faraday Loop, the loop must be around 1/5 - 1/6 the main element.
+
+Loop Circumference:     4 feet (1.2192 m)
+Hula Hoop Circ:         about 1.99 m - remove 70cm and fill with antenna wire?

@@ -1,0 +1,50 @@
+The standard US door height is 6'8" or 2.032m
+
+This is, therefore, the maximum diameter my loop antenna can be. 
+
+The equation c = (d * pi) gives us a circumference of about 6.384m
+
+
+From Wikipedia reference:
+http://www.66pacific.com/calculators/small_tx_loop_calc.aspx
+
+The conductor length should be more than 1/8 wavelength and less than 1/4
+wavelength. Greater than 1/4 wavelength will result in self-resonance.
+
+5m < c < 10m      or      17.0' < c < 34.1'
+
+Using Home Depot's largest diameter pipe ($38 per pipe)
+
+1" conductor diameter and 10' results in:
+Antenna diameter is 3'
+10' Circumference NOT IDEAL!!!
+----------------------------------------------
+Antenna efficiency: 15% (-8.3 dB below 100%)
+Antenna bandwidth: 4.36 kHz
+Tuning Capacitance: 229 pF
+
+Capacitor voltage: 892 volts RMS
+Resonant circulating current: 8.98 A
+Radiation resistance: 0.005 ohms
+Loss Resistance: 0.026 ohms
+Inductance: 2.26 microhenrys
+Inductive Reactance: 99.3 ohms
+Quality Factor (Q): 1,604
+Distributed capacity: 8 pF
+
+
+1" conductor diame and 20' (welded?) results in:
+Antenna diameter is 3'
+----------------------------------------------
+Antenna efficiency: 58% (-2.3 dB below 100%)
+Antenna bandwidth: 7.52 kHz
+Tuning Capacitance: 96 pF
+
+Capacitor voltage: 1,047 volts RMS
+Resonant circulating current: 4.44 A
+Radiation resistance: 0.074 ohms
+Loss Resistance: 0.053 ohms
+Inductance: 5.36 microhenrys
+Inductive Reactance: 236 ohms
+Quality Factor (Q): 931
+Distributed capacity: 16 pF
